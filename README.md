@@ -24,3 +24,7 @@ Technologies
 Starting the project
 
     Installing NPM packages - npm install.
+
+    Wait for a few seconds and the project will initiate in your browser.
+
+Have fun!
