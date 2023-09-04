@@ -1,0 +1,24 @@
+.scroll {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 1rem;
+  font-weight: 100;
+  background: var(--shark);
+}
+
+/* Media Query */
+@media screen and (max-width: 770px) {
+  .scroll {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .scroll {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.1rem;
+  }
+}

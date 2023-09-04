@@ -1,0 +1,21 @@
+.movie__row-container {
+  height: 200px;
+  margin-top: 3rem;
+}
+
+.movie__row-container a {
+  cursor: default;
+  margin: 1rem 0.2rem;
+}
+
+.movie__row-container_img {
+  height: 100%;
+  margin: 0 0.4rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 15px 3px var(--black), -3px -3px 15px 3px var(--black);
+  transition: scale 0.3s ease-in-out;
+}
+
+.movie__row-container_img:hover {
+  scale: 1.06;
+}

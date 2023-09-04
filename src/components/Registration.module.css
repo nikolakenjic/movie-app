@@ -1,0 +1,142 @@
+.registration {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.registration > h2 {
+  font-size: 2.3rem;
+}
+
+.registration__btn {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.registration__title {
+  margin: 2rem 0;
+  color: var(--white);
+}
+
+.registration__form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background-color: var(--shark);
+}
+
+.registration__form > label {
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  font-weight: 200;
+  color: var(--white);
+}
+
+.registration__form > input {
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0 2rem;
+}
+
+.registration__form-invalid {
+  color: var(--danger);
+  font-size: 0.95rem;
+}
+
+.registration__form-invalid > span {
+  color: var(--quicksand);
+}
+
+.registration__form-btn {
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.disabled {
+  background-color: #dddddd !important;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  background-color: #dddddd !important;
+  cursor: not-allowed;
+}
+
+/* Media Query */
+@media screen and (max-width: 1050px) {
+  .registration > h2 {
+    font-size: 2.1rem;
+  }
+
+  .registration__form {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .registration > h2 {
+    font-size: 1.9rem;
+  }
+
+  .registration button {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .registration__form {
+    width: 330px;
+  }
+
+  .registration__form > label {
+    font-size: 1rem;
+  }
+
+  .registration__form > input {
+    font-size: 0.9rem;
+  }
+
+  .registration__form-invalid {
+    color: var(--danger);
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .registration > h2 {
+    font-size: 1.7rem;
+  }
+
+  .registration__form {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .registration > h2 {
+    font-size: 1.5rem;
+  }
+
+  .registration__form {
+    width: 240px;
+  }
+
+  .registration__form > label {
+    font-size: 0.8rem;
+  }
+
+  .registration__form > input {
+    font-size: 0.7rem;
+  }
+
+  .registration__form-invalid {
+    color: var(--danger);
+    font-size: 0.7rem;
+  }
+}

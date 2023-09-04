@@ -1,0 +1,32 @@
+.navbar__links {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__links > a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.navbar__links > a:hover,
+.navbar__links > a:active,
+.navbar__links > a.active {
+  color: var(--quicksand);
+  text-decoration: underline;
+}
+
+/* Media Query */
+@media screen and (max-width: 600px) {
+  .navbar__links > a {
+    font-size: 1rem;
+  }
+
+  .navbar__links button {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
