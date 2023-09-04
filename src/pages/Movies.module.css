@@ -203,15 +203,22 @@
     width: 100%;
     box-shadow: none;
     background-color: transparent;
+    margin: auto;
   }
 
   .movie__container-card {
-    max-width: 100%;
-    height: 250px;
+    width: auto;
+    max-width: 150px;
+    height: 200px;
+  }
+
+  /* .movie__container-card {
+    width: 100%;
+    height: 230px;
     padding: 0;
     margin: auto;
     margin: 1rem 0;
-  }
+  } */
 
   .fixed__btns {
     flex-wrap: wrap;
