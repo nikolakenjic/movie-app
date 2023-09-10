@@ -4,6 +4,7 @@ import classes from './Registration.module.css';
 import Button from '../UI/Button';
 import DataContext from '../context/DataContext';
 import SucceedOrFailed from './SucceedOrFailed';
+import ShowPassword from '../UI/ShowPassword';
 
 const Registration = () => {
   // const navigate = useNavigate();
@@ -29,6 +30,19 @@ const Registration = () => {
   const [matchPwd, setMatchPwd] = useState('');
   const [validMatchPwd, setValidMatchPwd] = useState(false);
   const [matchPwdFocus, setMatchPwdFocus] = useState(false);
+
+  const togglePassword = (e) => {
+    const { name } = e.target;
+    if (name === 'pwd') {
+      let x = document.getElementById('pwd');
+      x.type = x.type === 'password' ? 'text' : 'password';
+    }
+
+    if (name === 'confirm') {
+      let y = document.getElementById('confirm');
+      y.type = y.type === 'password' ? 'text' : 'password';
+    }
+  };
 
   // Check Username
   useEffect(() => {
@@ -68,8 +82,7 @@ const Registration = () => {
     localStorage.setItem('reg', JSON.stringify(users));
 
     setSuccessOrError({
-      title: 'Successfully registered',
-      message: 'You are now registered',
+      title: 'Successfully registered!!!',
       registration: true,
     });
   };
@@ -87,6 +100,7 @@ const Registration = () => {
           onSubmit={handleRegister}
           className={classes['registration__form']}
         >
+          {/* Username */}
           <label htmlFor="username">Username:</label>
           <input
             id="username"
@@ -104,6 +118,7 @@ const Registration = () => {
             </p>
           )}
 
+          {/* Email */}
           <label htmlFor="email">Email:</label>
           <input
             id="email"
@@ -120,6 +135,7 @@ const Registration = () => {
             </p>
           )}
 
+          {/* Password */}
           <label htmlFor="pwd">Password:</label>
           <input
             id="pwd"
@@ -130,7 +146,11 @@ const Registration = () => {
             onFocus={() => setPwdFocus(true)}
             onBlur={() => setPwdFocus(false)}
           />
-          {pwdFocus && !validPwd && (
+          {password.length > 0 && (
+            <ShowPassword name="pwd" togglePassword={togglePassword} />
+          )}
+
+          {((pwdFocus && !validPwd) || (password.length > 0 && !validPwd)) && (
             <p className={classes['registration__form-invalid']}>
               8 to 24 characters. Must include uppercase and lowercase letters,
               a number and a special character.{' '}
@@ -138,6 +158,7 @@ const Registration = () => {
             </p>
           )}
 
+          {/* Confirm Password */}
           <label htmlFor="confirm">Confirm Password:</label>
           <input
             id="confirm"
@@ -148,10 +169,15 @@ const Registration = () => {
             onFocus={() => setMatchPwdFocus(true)}
             onBlur={() => setMatchPwdFocus(false)}
           />
-          {matchPwdFocus && !validMatchPwd && (
+          {((matchPwdFocus && !validMatchPwd) ||
+            (matchPwd.length > 0 && !validMatchPwd)) && (
             <p className={classes['registration__form-invalid']}>
               Repeat the password. Must match the first password input field.
             </p>
+          )}
+
+          {matchPwd.length > 0 && (
+            <ShowPassword name="confirm" togglePassword={togglePassword} />
           )}
 
           <Button className={classes['registration__form-btn']}>Sign Up</Button>

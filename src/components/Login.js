@@ -5,6 +5,8 @@ import DataContext from '../context/DataContext';
 import Button from '../UI/Button';
 import { useEffect } from 'react';
 import SucceedOrFailed from './SucceedOrFailed';
+import FormInput from '../UI/FormInput';
+import ShowPassword from '../UI/ShowPassword';
 
 const Login = () => {
   const { successOrError, setSuccessOrError } = useContext(DataContext);
@@ -29,15 +31,19 @@ const Login = () => {
       localStorage.setItem('loggedInUser', JSON.stringify(logUser));
       setSuccessOrError({
         title: 'Success',
-        message: 'Login successfully',
       });
     } else {
       setSuccessOrError({
-        title: 'Faild to login',
+        title: 'Faild: To login',
         message: 'You must input correct username, email or password',
         error: true,
       });
     }
+  };
+
+  const togglePassword = (e) => {
+    const x = document.getElementById('password');
+    x.type = x.type === 'password' ? 'text' : 'password';
   };
 
   useEffect(() => {
@@ -57,26 +63,32 @@ const Login = () => {
         <h2 className={classes['registration__title']}>Login</h2>
 
         <form className={classes['registration__form']} onSubmit={handleLogin}>
-          <label>Username:</label>
-          <input
+          <FormInput
+            id="user"
+            title="Username:"
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            valueName={username}
+            setValue={setUsername}
           />
 
-          <label>Email:</label>
-          <input
+          <FormInput
+            id="e-mail"
+            title="Email:"
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            valueName={email}
+            setValue={setEmail}
           />
 
-          <label>Password:</label>
-          <input
+          <FormInput
+            id="password"
+            title="Password:"
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            valueName={password}
+            setValue={setPassword}
           />
+          {password.length > 0 && (
+            <ShowPassword togglePassword={togglePassword} />
+          )}
 
           <Button
             className={`${classes['registration__form-btn']} ${

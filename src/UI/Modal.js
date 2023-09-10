@@ -24,7 +24,7 @@ const Modal = ({ title, message, registration, error, removeOverlay }) => {
       <footer className={classes.actions}>
         <Link to="/">
           <Button onClick={removeOverlay}>
-            {registration ? 'Tnx for Reg..' : error ? 'Try again' : 'Yeah!!!'}
+            {registration ? 'Thank You!' : error ? 'Try again.' : 'Yeah!!!'}
           </Button>
         </Link>
       </footer>

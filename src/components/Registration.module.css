@@ -1,5 +1,6 @@
 .registration {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +31,7 @@
   gap: 1rem;
   padding: 2rem 1rem;
   background-color: var(--shark);
+  margin-bottom: 2rem;
 }
 
 .registration__form > label {
@@ -46,12 +48,18 @@
 }
 
 .registration__form-invalid {
-  color: var(--danger);
+  color: var(--danger) !important;
   font-size: 0.95rem;
 }
 
-.registration__form-invalid > span {
-  color: var(--quicksand);
+input[type='checkbox'] {
+  accent-color: var(--danger);
+}
+
+.registration__form-show {
+  display: 'flex';
+  justify-content: 'center';
+  color: var(--white);
 }
 
 .registration__form-btn {

@@ -7,7 +7,11 @@ const Contact = () => {
       <h1>Contact:</h1>
       <p>kenjicniko@gmail.com</p>
       <p>
-        <a href="https://github.com/nikolakenjic/movie-app">
+        <a
+          href="https://github.com/nikolakenjic/movie-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           https://github.com/nikolakenjic/movie-app
         </a>
       </p>

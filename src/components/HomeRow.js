@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import RowFrame from '../UI/RowFrame';
 import classes from './HomeRow.module.css';
