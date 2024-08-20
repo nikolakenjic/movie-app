@@ -5,7 +5,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import WelcomePage from './pages/WelcomePage';
 import MovieDetail from './pages/MovieDetail';
 import Movies from './pages/Movies';
 import RootLayout from './pages/RootLayout';
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
   },
   { path: 'registration', element: <Registration /> },
   { path: 'login', element: <Login /> },
-  { path: 'login-page', element: <LoginPage /> },
+  { path: 'welcome', element: <WelcomePage /> },
 ]);
 
 const App = () => {

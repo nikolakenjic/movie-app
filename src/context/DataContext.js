@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
   const [filtered, setFiltered] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState('');
   const [auth, setAuth] = useState(false);
   const [viewAll, setViewAll] = useState(false);
   const [activeFilter, setActiveFilter] = useState('');
@@ -37,16 +37,20 @@ export const DataProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(URL);
+
+        if (!response.ok) {
+          throw new Error('Something went Wrong!!!');
+        }
+
         const data = await response.json();
         setMovies(data.results);
         setOriginalMovies(data.results);
-        setIsLoading(false);
       } catch (err) {
-        console.log(err);
-        setError(true);
-        setIsLoading(false);
+        setError(err.message);
       }
+      setIsLoading(false);
     };
+
     fetchData();
   }, [URL]);
 

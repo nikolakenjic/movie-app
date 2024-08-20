@@ -10,7 +10,6 @@ import ShowPassword from '../UI/ShowPassword';
 
 const Login = () => {
   const { successOrError, setSuccessOrError } = useContext(DataContext);
-  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,10 +20,7 @@ const Login = () => {
     const users = JSON.parse(localStorage.getItem('reg'));
 
     const logUser = users?.find(
-      (user) =>
-        user.username === username &&
-        user.email === email &&
-        user.password === password
+      (user) => user.email === email && user.password === password
     );
 
     if (logUser) {
@@ -34,7 +30,7 @@ const Login = () => {
       });
     } else {
       setSuccessOrError({
-        title: 'Faild: To login',
+        title: 'Failed: To login',
         message: 'You must input correct username, email or password',
         error: true,
       });
@@ -47,30 +43,25 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const handleDisable = () => {
-      return !(username && email && password);
+    const identifier = setTimeout(() => {
+      setIsBtnDisabled(!(email && password));
+    }, 500);
+
+    return () => {
+      clearTimeout(identifier);
     };
-    setIsBtnDisabled(handleDisable());
-  }, [email, password, username]);
+  }, [email, password]);
 
   return (
     <>
       {successOrError && <SucceedOrFailed />}
       <div className={classes.registration}>
-        <Link to="/login-page">
+        <Link to="/welcome">
           <Button className={classes['registration__btn']}>Back</Button>
         </Link>
         <h2 className={classes['registration__title']}>Login</h2>
 
         <form className={classes['registration__form']} onSubmit={handleLogin}>
-          <FormInput
-            id="user"
-            title="Username:"
-            type="text"
-            valueName={username}
-            setValue={setUsername}
-          />
-
           <FormInput
             id="e-mail"
             title="Email:"

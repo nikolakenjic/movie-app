@@ -91,7 +91,7 @@ const Registration = () => {
     <>
       {successOrError && <SucceedOrFailed />}
       <div className={classes.registration}>
-        <Link to="/login-page" className={classes['registration__btn']}>
+        <Link to="/welcome" className={classes['registration__btn']}>
           <Button>Back</Button>
         </Link>
         <h2 className={classes['registration__title']}>Sign Up</h2>
@@ -131,7 +131,7 @@ const Registration = () => {
           />
           {emailFocus && !validEmail && (
             <p className={classes['registration__form-invalid']}>
-              folow the example: example@something.com
+              Follow the example: example@something.com
             </p>
           )}
 

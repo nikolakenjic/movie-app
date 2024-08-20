@@ -5,18 +5,39 @@ import classes from './HomeRow.module.css';
 
 const HomeRow = ({ fetchUrl, title, className }) => {
   const [homeMovie, setHomeMovie] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const URL = 'https://api.themoviedb.org/3';
   const baseURL2 = 'https://image.tmdb.org/t/p/original';
 
   useEffect(() => {
     const fetchHomeMovie = async () => {
-      const response = await fetch(`${URL}${fetchUrl}`);
-      const data = await response.json();
-      setHomeMovie(data.results);
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(`${URL}${fetchUrl}`);
+        if (!response.ok) {
+          throw new Error('Could not fetch data!!!');
+        }
+
+        const data = await response.json();
+        setHomeMovie(data.results);
+      } catch (err) {
+        setError(err.message);
+      }
+      setIsLoading(false);
     };
     fetchHomeMovie();
   }, [fetchUrl]);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
 
   const homeMovieList = homeMovie?.map((movie) => {
     return (

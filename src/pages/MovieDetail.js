@@ -9,10 +9,14 @@ import DetailFrame from '../UI/DetailFrame';
 const MovieDetail = () => {
   const { originalMovies, baseURL, alternativeURL } = useContext(DataContext);
 
+  // console.log(originalMovies);
+
   const { id } = useParams();
   const movie = originalMovies.find((movie) => movie.id === parseInt(id));
   const moviePath = movie.backdrop_path;
   const URL = baseURL + moviePath;
+
+  // console.log(movie);
 
   if (!movie) {
     return <div style={{ textAlign: 'center', color: '#fff' }}>Loading..</div>;
