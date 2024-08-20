@@ -3,7 +3,7 @@ import classes from './ShowPassword.module.css';
 
 const ShowPassword = ({ name, togglePassword }) => {
   return (
-    <div className={classes['registration__form-show']}>
+    <div className={classes['registration__form-show-password']}>
       <input
         type="checkbox"
         id="show"

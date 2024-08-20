@@ -4,12 +4,23 @@ import Button from './Button';
 import classes from './Modal.module.css';
 import { Link } from 'react-router-dom';
 
-const Modal = ({ title, message, registration, error, removeOverlay }) => {
+const Modal = ({
+  title,
+  message,
+  registration,
+  login,
+  error,
+  removeOverlay,
+}) => {
   return (
     <Card className={classes.modal}>
       <header
         className={`${classes.header} ${
-          registration ? classes.success : error ? classes['header__error'] : ''
+          registration || login
+            ? classes.success
+            : error
+            ? classes['header__error']
+            : ''
         }`}
       >
         <h2>{title}</h2>
@@ -24,7 +35,11 @@ const Modal = ({ title, message, registration, error, removeOverlay }) => {
       <footer className={classes.actions}>
         <Link to="/">
           <Button onClick={removeOverlay}>
-            {registration ? 'Thank You!' : error ? 'Try again.' : 'Yeah!!!'}
+            {registration
+              ? "Let's Login and Start Exploring!"
+              : error
+              ? 'Try again.'
+              : login && "Yeah! Let's Get Started!"}
           </Button>
         </Link>
       </footer>

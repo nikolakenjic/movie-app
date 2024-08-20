@@ -7,7 +7,6 @@ import SucceedOrFailed from './SucceedOrFailed';
 import ShowPassword from '../UI/ShowPassword';
 
 const Registration = () => {
-  // const navigate = useNavigate();
   const { successOrError, setSuccessOrError } = useContext(DataContext);
   let users = JSON.parse(localStorage.getItem('reg')) || [];
 
@@ -82,7 +81,7 @@ const Registration = () => {
     localStorage.setItem('reg', JSON.stringify(users));
 
     setSuccessOrError({
-      title: 'Successfully registered!!!',
+      title: 'Successfully registered!',
       registration: true,
     });
   };

@@ -26,7 +26,8 @@ const Login = () => {
     if (logUser) {
       localStorage.setItem('loggedInUser', JSON.stringify(logUser));
       setSuccessOrError({
-        title: 'Success',
+        title: 'Success!',
+        login: true,
       });
     } else {
       setSuccessOrError({
