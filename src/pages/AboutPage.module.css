@@ -18,7 +18,7 @@
   padding: 1rem 2rem;
   background-color: var(--cape);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  text-align: justify;
+  text-align: center;
 }
 
 .about a {
