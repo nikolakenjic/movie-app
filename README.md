@@ -1,7 +1,7 @@
 MovieApp - Fetch API
 Login/Authentication Application
 
-    This project implements register, login and logout functionalities for users and can be used as a trivial starting point for more advanced/professional system-based applicatons.
+    This project implements register, login and logout functionalities for users and can be used as a trivial starting point for more advanced/professional system-based applications.
     This application allows you to search for movies by title and filter by year, title, popularity
 
 Main Features
