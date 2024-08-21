@@ -31,7 +31,7 @@ const Login = () => {
       });
     } else {
       setSuccessOrError({
-        title: 'Failed: To login',
+        title: 'Invalid credentials',
         message: 'Please enter the correct email and password',
         error: true,
       });
