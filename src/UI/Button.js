@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import DataContext from '../context/DataContext';
+import React from 'react';
 import classes from './Button.module.css';
 
 const Button = ({ children, type, onClick, className, disabled }) => {

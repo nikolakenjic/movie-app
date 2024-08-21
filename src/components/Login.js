@@ -32,7 +32,7 @@ const Login = () => {
     } else {
       setSuccessOrError({
         title: 'Failed: To login',
-        message: 'You must input correct username, email or password',
+        message: 'Please enter the correct email and password',
         error: true,
       });
     }

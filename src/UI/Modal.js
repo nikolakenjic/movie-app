@@ -38,7 +38,7 @@ const Modal = ({
             {registration
               ? "Let's Login and Start Exploring!"
               : error
-              ? 'Try again.'
+              ? 'Try again'
               : login && "Yeah! Let's Get Started!"}
           </Button>
         </Link>
