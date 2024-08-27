@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import RowFrame from '../UI/RowFrame';
 import classes from './HomeRow.module.css';
+import Spinner from '../UI/Spinner';
 
 const HomeRow = ({ fetchUrl, title, className }) => {
   const [homeMovie, setHomeMovie] = useState([]);
@@ -32,7 +33,7 @@ const HomeRow = ({ fetchUrl, title, className }) => {
   }, [fetchUrl]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   if (error) {
@@ -62,7 +63,6 @@ const HomeRow = ({ fetchUrl, title, className }) => {
       <RowFrame className={`${classes['home__row']} ${className}`}>
         {homeMovieList}
       </RowFrame>
-      ;
     </>
   );
 };

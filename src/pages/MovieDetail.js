@@ -21,10 +21,11 @@ const MovieDetail = () => {
     <>
       <DetailFrame
         moviePath={moviePath}
-        URL={URL}
+        URL2={URL}
         alternativeURL={alternativeURL}
         title={movie.title}
         overview={movie.overview}
+        movie={movie}
       />
       <MoviesRow movies={originalMovies} />
     </>

@@ -31,7 +31,7 @@ const Movies = () => {
 
   const windowScroll = useWindowScroll();
 
-  // Search uniwue Year
+  // Search unique Year
   const uniqueYears = Array.from(
     new Set(movies.map((movie) => new Date(movie.release_date).getFullYear()))
   );
