@@ -1,7 +1,7 @@
 .home__page-detail {
-  height: 230px;
+  height: 220px;
 }
 
-.home__page-detail img {
+/* .home__page-detail img {
   box-shadow: 3px 3px 15px 3px var(--black), -3px -3px 15px 3px var(--black);
-}
+} */

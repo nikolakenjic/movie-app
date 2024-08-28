@@ -67,9 +67,12 @@ const DetailFrame = ({
           <p className={classes['movie__detail-container_info-description']}>
             {overview}
           </p>
-          <button onClick={() => handleClick(movie)}>
+          <Button
+            className={classes['movie__detail-btn']}
+            onClick={() => handleClick(movie)}
+          >
             {trailerUrl ? 'Close Trailer' : 'Open Trailer'}
-          </button>
+          </Button>
         </div>
       </div>
 

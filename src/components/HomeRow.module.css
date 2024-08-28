@@ -1,12 +1,12 @@
 .home__row {
-  height: 350px;
+  height: 250px;
 }
 
 .home__row-title {
   font-size: 2rem;
   font-weight: 200;
   margin-left: 1rem;
-  color: var(--white);
+  color: var(--quicksand);
 }
 
 .home__row-container {
