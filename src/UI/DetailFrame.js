@@ -20,7 +20,7 @@ const DetailFrame = ({
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
-      movieTrailer(movie?.title || '')
+      movieTrailer(movie?.title || movie?.original_title)
         .then((url) => {
           if (!url.startsWith('http://') && !url.startsWith('https://')) {
             url = 'https://' + url;
@@ -71,7 +71,7 @@ const DetailFrame = ({
             className={classes['movie__detail-btn']}
             onClick={() => handleClick(movie)}
           >
-            {trailerUrl ? 'Close Trailer' : 'Open Trailer'}
+            {trailerUrl ? 'Close' : 'Open'}
           </Button>
         </div>
       </div>

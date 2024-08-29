@@ -134,7 +134,7 @@ const Movies = () => {
   return (
     <div className={classes.movies}>
       <div className={classes['movies__info']}>
-        <h1 className={classes['movies__title']}>Find your Favourite Movie.</h1>
+        <h1 className={classes['movies__title']}>Find your Favorite Movie.</h1>
 
         <form onSubmit={handleSearch} className={classes['movie__input']}>
           <input
