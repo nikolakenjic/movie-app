@@ -27,7 +27,7 @@ const DetailFrame = ({
           }
 
           const urlParams = new URLSearchParams(new URL(url).search);
-          console.log(urlParams);
+          // console.log(urlParams);
 
           setTrailerUrl(urlParams.get('v'));
         })

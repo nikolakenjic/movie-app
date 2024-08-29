@@ -4,6 +4,7 @@ import DataContext from '../context/DataContext';
 import { useContext } from 'react';
 import MoviesRow from '../components/MoviesRow';
 import DetailFrame from '../UI/DetailFrame';
+import Spinner from '../UI/Spinner';
 
 const MovieDetail = () => {
   const { originalMovies, baseURL, alternativeURL } = useContext(DataContext);
@@ -14,7 +15,7 @@ const MovieDetail = () => {
   const URL = baseURL + moviePath;
 
   if (!movie) {
-    return <div style={{ textAlign: 'center', color: '#fff' }}>Loading..</div>;
+    return <Spinner />;
   }
 
   return (

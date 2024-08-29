@@ -7,6 +7,7 @@ import Button from '../UI/Button';
 import Card from '../UI/Card';
 import useWindowScroll from '../hooks/useWindowScroll';
 import ScrollButton from '../UI/ScrollButton';
+import Spinner from '../UI/Spinner';
 
 const Movies = () => {
   const nameInputRef = useRef();
@@ -151,9 +152,7 @@ const Movies = () => {
       </div>
 
       {/* Loading*********** */}
-      {isLoading && (
-        <h1 style={{ textAlign: 'center', color: '#fff' }}>Loading...</h1>
-      )}
+      {isLoading && <Spinner />}
 
       {/* Error */}
       {error && (
