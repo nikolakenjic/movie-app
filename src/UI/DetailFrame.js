@@ -13,25 +13,32 @@ const DetailFrame = ({
   overview,
   movie,
 }) => {
-  console.log('Movie', movie);
   const [trailerUrl, setTrailerUrl] = useState('');
+  const [trailerError, setTrailerError] = useState('');
 
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl('');
+      setTrailerError('');
     } else {
       movieTrailer(movie?.title || movie?.original_title)
         .then((url) => {
-          if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            url = 'https://' + url;
+          if (url) {
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+              url = 'https://' + url;
+            }
+
+            const urlParams = new URLSearchParams(new URL(url).search);
+            setTrailerUrl(urlParams.get('v'));
+            setTrailerError('');
+          } else {
+            setTrailerError('Trailer not available for this movie.');
           }
-
-          const urlParams = new URLSearchParams(new URL(url).search);
-          // console.log(urlParams);
-
-          setTrailerUrl(urlParams.get('v'));
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          setTrailerError('Trailer not available for this movie.');
+        });
     }
   };
 
@@ -67,12 +74,20 @@ const DetailFrame = ({
           <p className={classes['movie__detail-container_info-description']}>
             {overview}
           </p>
+
           <Button
             className={classes['movie__detail-btn']}
             onClick={() => handleClick(movie)}
           >
             {trailerUrl ? 'Close' : 'Open'}
           </Button>
+
+          {/* Display error message if trailer is not available */}
+          {trailerError && (
+            <p className={classes['movie__detail-container_error']}>
+              {trailerError}
+            </p>
+          )}
         </div>
       </div>
 

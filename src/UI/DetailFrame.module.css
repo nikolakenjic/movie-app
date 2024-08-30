@@ -51,6 +51,10 @@
   font-weight: 200;
 }
 
+.movie__detail-container_error {
+  color: var(--red);
+}
+
 /* Media Query */
 @media screen and (max-width: 800px) {
   .movie__detail-btn {
