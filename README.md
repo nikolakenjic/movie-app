@@ -1,6 +1,6 @@
 # MovieApp
 
-**MovieApp** is a web application that allows users to register, log in, and log out, as well as search and filter movies based on various criteria. This project demonstrates basic login/authentication systems and movie search functionality using the Fetch API. It can serve as a foundation for building more complex applications.
+**MovieApp** is a web application that allows users to register, log in, and log out, as well as search and filter movies based on various criteria. This project demonstrates login/authentication systems and movie search functionality using the Fetch API.
 
 ## Features
 
@@ -29,7 +29,6 @@ Movie data is fetched using the **Fetch API**.
 - **HTML**
 - **JavaScript**
 - **React.js**
-- **Material UI** – for component styling
 - **Font Awesome** – for icons
 
 ### Routing
