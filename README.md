@@ -1,30 +1,38 @@
-MovieApp - Fetch API
-Login/Authentication Application
+# MovieApp
 
-    This project implements register, login and logout functionalities for users and can be used as a trivial starting point for more advanced/professional system-based applications.
-    This application allows you to search for movies by title and filter by year, title, popularity
+**MovieApp** is a web application that allows users to register, log in, and log out, as well as search and filter movies based on various criteria. This project demonstrates basic login/authentication systems and movie search functionality using the Fetch API. It can serve as a foundation for building more complex applications.
 
-Main Features
+## Features
 
-    Registration of the user
-    Login
-    Logout
+### User Features
 
-    FetchAPI
-    Search and filter
+- **User Registration**
+- **Login**
+- **Logout**
 
-Technologies
+### Movie Search and Filter
 
-    Base Login/Auth app was built with HTML, JS, ReactJS including the Material UI and Font Awesome for styling the components.
+- **Search Movies by Title**
+- **Filter Movies by:**
+  - **Year**
+  - **Popularity**
+  - **Title**
 
-    react-dom - for providing specific DOM methods.
-    react-router - for enabling the routing among the components.
-    react-router-dom - for implementing the dynamic routing.
+## API
 
-Starting the project
+Movie data is fetched using the **Fetch API**.
 
-    Installing NPM packages - npm install.
+## Technologies Used
 
-    Wait for a few seconds and the project will initiate in your browser.
+### Frontend
 
-Have fun!
+- **HTML**
+- **JavaScript**
+- **React.js**
+- **Material UI** – for component styling
+- **Font Awesome** – for icons
+
+### Routing
+
+- **react-router** – for routing between components
+- **react-router-dom** – for dynamic routing within the app
